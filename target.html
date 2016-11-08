@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Shooting Simulator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://static.codehs.com/gulp/cb01b4a22ffd3971572a8a1ab9f3b7c4cb17f383/chs-js-lib/chs.js"></script
+    <script>
+    window.onload = function() {
+      var horizontalLine = new Line(0, 240, 0, 240);
+var verticalLine = new Line(200, 0, 200, 0);
+var redCircle = new Circle(10);
+
+
+function start(){
+	mouseMoveMethod(target);
+	mouseClickMethod(bullet);
+	
+	horizontalLine.setPosition(getWidth(), getHeight()/2);
+	add(horizontalLine);
+	
+	verticalLine.setPosition(getWidth()/2, getHeight());
+	add(verticalLine);
+	
+}
+
+function target(e){
+    horizontalLine.setEndpoint(0, e.getY());
+    horizontalLine.setPosition(getWidth(), e.getY());
+    
+    verticalLine.setEndpoint(e.getX(), 0);
+    verticalLine.setPosition(e.getX(), getHeight());
+}
+
+function bullet(e){
+    redCircle.setColor(Color.red);
+    redCircle.setPosition(e.getX(), e.getY());
+    add(redCircle);
+}
+
+    if (typeof start === 'function') {
+       start();
+    }
+   };
+  </script>
+      <style>
+            canvas {
+                   border: 1px solid black;
+            }
+      </style>
+  </head>
+  <body>
+     <div id="canvasContainer" width:"100%" style="width: 100%; height: 100%; overflow: hidden;">
+         <canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
+     </div>
+  </body>  
+</html>

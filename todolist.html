@@ -1,0 +1,29 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>My own Element</title>
+    </head>
+    <body>
+        <textarea rows="10" cols="80" id="inputText">Input html to test here</textarea>
+        <button onclick="testHTML();">Test!</button>
+        <ul id="list">The List:</ul>
+        <script>
+            function testHTML(){
+                
+                var list = document.getElementById("list");
+                var item = document.createElement("li");
+                var userInput = document.getElementById("inputText");
+                
+                item.textContent = userInput.value;
+                list.appendChild(item);
+            }
+            
+        </script>
+    </body>
+</html>

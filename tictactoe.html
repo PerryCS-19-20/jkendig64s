@@ -35,19 +35,43 @@ and open the template in the editor.
         </table>
         <script>
             var player="X";
-            
+            var won = false;
             function play(id){
                 var cell=document.getElementById(id);
                 
                 if (cell.textContent==""){
                     cell.textContent=player;
-                    
+                    checkWin();
                     if (player=="X"){
                         player="O";
                     }else{
                         player="X";
                     }
                 }
+            }
+            function checkWin(){
+                check3cells("1","2","3");
+                check3cells("4","5","6");
+                check3cells("7","8","9");
+                check3cells("1","4","7");
+                check3cells("2","5","8");
+                check3cells("3","6","9");
+                check3cells("1","5","9");
+                check3cells("3","5","7");
+            }
+            function check3cells(c1id,c2id,c3id){
+                var c1=document.getElementById(c1id);
+                var c2=document.getElementById(c2id);
+                var c3=document.getElementById(c3id);
+                
+                if ((c1.textContent==c2.textContent)&&
+                    (c2.textContent==c3.textContent)&&
+                    (c3.textContent!="")){
+                        won=true;
+                        c1.style.color="red";
+                        c2.style.color="red";
+                        c3.style.color="red";
+                   }
             }
         </script>    
     </body>

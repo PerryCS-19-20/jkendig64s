@@ -5,48 +5,60 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-       <title>Multiplication Table</title>
-         <style>
+       <title>Stylized Multiplication Table</title>
+       <h1 style="background-color:white">Multiplication Table</h1>
+       <style>
             table, td, th {
-                border: solid 1px;
+                border: solid 15px;
+                background-color: purple;
             }
             td {
                 text-align: right;
+                background-color: aquamarine;
             }
-         </style>
+            th {
+                background-color: teal;
+            }
+        </style>
     </head>
-    <body onload="buildTimesTable();">
-        
-        <h1>Multiplication Table</h1>
-        Table Width:<input type="range" id="tableWidth" min="1" max="20" value="10" onchange="buildTimesTable();"><br>
+    <body onload="buildTimesTable();" style="background-color:black">
         <script>
-            function buildTimesTable() {
-                var timesTable = document.createElementById("timesTable");
-                timesTable.id = "timesTable";
-                if (timesTable)
-                var body = document.body;
-                body.appendChild(timesTable);
-                for (var row = 0; row < 11; row++){
-                    tr = document.createElement("tr");
-                    timesTable.appendChild(tr);
-                    for (var col = 0; col < 11; col++){
-                         if (col == 0){
-                            col.textContent=col;
-                        }else{
-                            col.textContent=col*row;
+        function buildTimesTable() {
+            var timesTable = document.createElement("table");
+            timesTable.id = "timesTable";
+
+            var body = document.body;
+            body.appendChild(timesTable);
+            var col = 0;
+            for (var row = 0; row < 11; row++) {
+                tr = document.createElement("tr");
+                timesTable.appendChild(tr);
+                for (col = 0; col < 11; col++) {
+
+                    if (row == 0) {
+                        cell = document.createElement("th");
+                        timesTable.appendChild(cell);
+                        cell.textContent = col;
+                        if (col == 0) {
+                            cell.textContent = "";
                         }
-                        if (row == 0){
-                            row2 = document.createElement("td");
-                            timesTable.appendChild(row2);
-                            row2.textContent=col;
-                        }else{
-                            row2 = document.createElement("td");
-                            timesTable.appendChild(row2);
-                            row2.textContent=row*col;
+                    } else {
+                        
+
+                        if (col == 0) {
+                            cell = document.createElement("th");
+                            timesTable.appendChild(cell);
+                            cell.textContent = row;
+                        } else {
+                            cell = document.createElement("td");
+                            timesTable.appendChild(cell);
+                            cell.textContent = row * col;
                         }
                     }
+
                 }
             }
+        }
         </script>
     </body>
 </html>

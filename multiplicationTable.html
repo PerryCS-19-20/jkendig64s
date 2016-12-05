@@ -40,6 +40,8 @@ and open the template in the editor.
                         
 
                         if (col == 0) {
+                            cell = document.createElement("th");
+                            timesTable.appendChild(cell);
                             cell.textContent = row;
                         } else {
                             cell = document.createElement("td");

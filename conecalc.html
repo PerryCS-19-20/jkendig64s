@@ -14,7 +14,7 @@ and open the template in the editor.
                 var vol = document.getElementById("vol");
                 
                 var area = Math.PI * r * r;
-                vol.value = (area * h).toFixed(2);
+                vol.value = (area * (h/3.0)).toFixed(2);
             }
         </script>
         <style>
@@ -32,7 +32,6 @@ and open the template in the editor.
         <button onclick="calc();">Calculate</button>
         <hr>
         v: <input type="output" id="vol" placeholder="volume" readonly>
-        <h2>NOTE: I copied and pasted the code from cylindercalc.html page since this html file is similar to that,
-            so from here on out it works exactly like a cylinder calculator, and this code will soon to be modified.</h2>
+        <h2>NOTE: </h2>
     </body>
 </html>

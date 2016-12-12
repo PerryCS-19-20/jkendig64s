@@ -8,5 +8,22 @@ and open the template in the editor.
         <title>Chalkboard</title>
     </head>
     <body>
+        <textarea rows="10" cols="80" id="inputText">You must enter here!</textarea>
+        <button onclick="testHTML();">Test!</button>
+        <br>
+        <ol id="list">
+        </ol>
+        <script>
+            function testHTML(){
+                var userInput = document.getElementById("inputText");
+                for (var i = 0; 1 < 100; i++){
+                    var iWillNot = "I will not... ";
+                    var list = document.getElementById("list");
+                    var item = document.createElement("l1");
+                    item.textContent = iWillNot + userInput.value;
+                    list.appendChild(item);
+                }
+            }
+        </script>
     </body>
 </html>

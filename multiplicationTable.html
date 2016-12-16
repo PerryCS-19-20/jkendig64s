@@ -20,7 +20,6 @@ and open the template in the editor.
         function buildTimesTable() {
             var timesTable = document.createElement("table");
             timesTable.id = "timesTable";
-
             var body = document.body;
             body.appendChild(timesTable);
             var col = 0;
@@ -28,7 +27,6 @@ and open the template in the editor.
                 tr = document.createElement("tr");
                 timesTable.appendChild(tr);
                 for (col = 0; col < 11; col++) {
-
                     if (row == 0) {
                         cell = document.createElement("th");
                         timesTable.appendChild(cell);
@@ -37,8 +35,6 @@ and open the template in the editor.
                             cell.textContent = "";
                         }
                     } else {
-                        
-
                         if (col == 0) {
                             cell = document.createElement("th");
                             timesTable.appendChild(cell);
@@ -49,7 +45,6 @@ and open the template in the editor.
                             cell.textContent = row * col;
                         }
                     }
-
                 }
             }
         }

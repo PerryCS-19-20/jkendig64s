@@ -11,6 +11,40 @@ and open the template in the editor.
             background-color: aqua;
             color: ;
         }
+        #menubar {
+            position: relative;
+            padding: 0px;
+            display: block;
+            background-color: gold
+        }
+        #menubar > ul {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            list-style-type: nine;
+            margin: 0;
+            padding: 0;
+        }
+        #menubar > ul > li {
+            display: inline-block;
+            padding: 8px;
+        }
+        #menubar ul li {
+            list-style: none;
+            text-indent: 0px;
+        }
+        #menubar ul ul {
+            display: none;
+            position: absolute;
+            background-color: graytext;
+            padding: 0px;
+        }
+        #memubar a {
+            display: block;
+            color: goldenrod;
+            padding: 8px;
+            text-decoration: none;
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="menubar.css">
     <script>
